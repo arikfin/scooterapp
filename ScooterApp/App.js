@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import Account from './src/screens/account';
 import firebase from './src/utilis/firebase.js';
 import Dashboard from './src/screens/dashboard/index.js';
+import { NavigationContainer } from '@react-navigation/native';
+import { TabNavigator } from './src/navigation'
 
 export default function App() {
 
@@ -14,11 +16,14 @@ export default function App() {
   }
 
   return (
+
+   <NavigationContainer>
+
    <View style={{flex: 1}}>
     {
       isAuth ?
         (
-          <Dashboard/>
+          <TabNavigator/>
         )
         :
         (
@@ -26,6 +31,7 @@ export default function App() {
         )
     }
    </View>
+   </NavigationContainer>
   );
 }
 
