@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Account from './src/screens/account';
 import firebase from './src/utilis/firebase.js';
+import Dashboard from './src/screens/dashboard/index.js';
 
 export default function App() {
 
@@ -17,9 +18,7 @@ export default function App() {
     {
       isAuth ?
         (
-          <View>
-            <Text>Hello</Text>
-          </View>
+          <Dashboard/>
         )
         :
         (
